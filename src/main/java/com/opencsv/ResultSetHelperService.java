@@ -142,9 +142,11 @@ public class ResultSetHelperService implements ResultSetHelper {
             value = handleDate(rs, colIndex, dateFormatString);
             break;
          case Types.TIME:
+         case Types.TIME_WITH_TIMEZONE:
             value = Objects.toString(rs.getTime(colIndex), DEFAULT_VALUE);
             break;
          case Types.TIMESTAMP:
+         case Types.TIMESTAMP_WITH_TIMEZONE:
             value = handleTimestamp(rs.getTimestamp(colIndex), timestampFormatString);
             break;
          case Types.NVARCHAR:
